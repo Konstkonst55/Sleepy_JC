@@ -1,4 +1,4 @@
-package com.example.sleepy_jc
+package com.example.sleepy_jc.modules.module_alarm.presentation
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

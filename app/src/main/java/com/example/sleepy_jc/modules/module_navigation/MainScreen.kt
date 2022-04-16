@@ -1,16 +1,18 @@
-package com.example.sleepy_jc
+package com.example.sleepy_jc.modules.module_navigation
 
-import androidx.compose.animation.slideIn
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.sleepy_jc.ui.theme.White
 
 @Composable
 fun MainScreen() {
@@ -51,7 +53,10 @@ fun RowScope.AddItem(
 ) {
     BottomNavigationItem(
         label = {
-            Text(text = screen.title)
+            Text(
+                text = screen.title,
+                style = MaterialTheme.typography.body2
+            )
         },
         icon = {
             Icon(
@@ -65,8 +70,11 @@ fun RowScope.AddItem(
         unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled),
         onClick = {
             navController.navigate(screen.route) {
-                popUpTo(navController.graph.findStartDestination().id)
+                popUpTo(navController.graph.findStartDestination().id){
+                    this.inclusive = true
+                }
                 launchSingleTop = true
+                navController.backQueue.clear()
             }
         }
     )

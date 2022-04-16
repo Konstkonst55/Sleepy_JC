@@ -31,10 +31,21 @@ val Typography = Typography(
     h1 = TextStyle(
         fontFamily = appFontFamily,
         fontWeight = FontWeight.Bold,
-        fontSize = 16.sp
+        fontSize = 40.sp
     ),
     body1 = TextStyle(
         fontFamily = appFontFamily,
-        fontWeight = FontWeight.Normal
+        fontWeight = FontWeight.Normal,
+        fontSize = 18.sp
+    ),
+    body2 = TextStyle(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp
+    ),
+    subtitle1 = TextStyle(
+        fontFamily = appFontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = 25.sp
     )
 )
